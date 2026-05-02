@@ -29,7 +29,9 @@ DEBUG = True
 
 #-----
 
-
+ALLOWED_HOSTS = [' YoeurmLinna.pythonanywhere.com', 'localhost', '127.0.0.1']
+#ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 LOGIN_URL = '/admin/login/'
 
 
@@ -132,3 +134,11 @@ LOGOUT_REDIRECT_URL = '/accounts/login/'   # after logout → back to login page
 # With these settings + the root RedirectView, the full navigation cycle is:
 #   /  →  /accounts/login/  →  (log in)  →  /sales/products/
 #   (log out)  →  /accounts/login/
+
+CSRF_TRUSTED_ORIGINS =[
+    'https:// YoeurmLinna.pythonanywhere.com',
+    'https:// YoeurmLinna.pythonanywhere.com',
+]
+
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
